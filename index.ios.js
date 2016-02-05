@@ -16,19 +16,12 @@ class iPoop extends Component {
         <Text onClick={this.clickMe.bind(this)} class="welcome" style={styles.welcome}>
           Welcome to iPoop!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
         <View style={styles.buttonBox}>
           <TouchableHighlight style={styles.button} onPress={this.clickMe}>
-            <Text>Sign Up</Text>
+            <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableHighlight>
           <TouchableHighlight style={styles.button} onPress={this.clickMe}>
-            <Text>Log in</Text>
+            <Text style={styles.buttonText}>Log in</Text>
           </TouchableHighlight>
         </View>
       </View>
@@ -49,13 +42,14 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   button: {
-    backgroundColor: 'red',
+    backgroundColor: '#6495ed',
     borderRadius: 10,
-    fontSize: 25,
     padding: 5,
-    textAlign: 'center',
-    color: 'white',
     margin: 5
+  },
+  buttonText: {
+    fontSize: 20,
+    color: 'white',
   },
   buttonBox: {
     flexDirection: 'row'
