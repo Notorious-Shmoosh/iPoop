@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  */
 'use strict';
-import React, { AppRegistry, Component, StyleSheet, Text, View, Image } from 'react-native';
+import React, { AppRegistry, Component, StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
 
 class iPoop extends Component {
   clickMe() {
@@ -23,6 +23,14 @@ class iPoop extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <View style={styles.buttonBox}>
+          <TouchableHighlight style={styles.button} onPress={this.clickMe}>
+            <Text>Sign Up</Text>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.button} onPress={this.clickMe}>
+            <Text>Log in</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
@@ -39,6 +47,18 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  button: {
+    backgroundColor: 'red',
+    borderRadius: 10,
+    fontSize: 25,
+    padding: 5,
+    textAlign: 'center',
+    color: 'white',
+    margin: 5
+  },
+  buttonBox: {
+    flexDirection: 'row'
   },
   instructions: {
     textAlign: 'center',
