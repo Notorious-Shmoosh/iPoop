@@ -3,20 +3,18 @@
  * https://github.com/facebook/react-native
  */
 'use strict';
-import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import React, { AppRegistry, Component, StyleSheet, Text, View, Image } from 'react-native';
 
 class iPoop extends Component {
+  clickMe() {
+    alert('Sasha and Yan are awesome!');
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+      <View style={styles.container} onPress={this.clickMe.bind(this)}>
+        <Image source={require('./poop.png')} />
+        <Text onClick={this.clickMe.bind(this)} class="welcome" style={styles.welcome}>
+          Welcome to iPoop!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
