@@ -3,28 +3,27 @@
  * https://github.com/facebook/react-native
  */
 'use strict';
-import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import React, { AppRegistry, Component, StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
 
 class iPoop extends Component {
+  clickMe() {
+    alert('Sasha and Yan are awesome!');
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+      <View style={styles.container} onPress={this.clickMe.bind(this)}>
+        <Image source={require('./poop.png')} />
+        <Text onClick={this.clickMe.bind(this)} class="welcome" style={styles.welcome}>
+          Welcome to iPoop!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <View style={styles.buttonBox}>
+          <TouchableHighlight style={styles.button} onPress={this.clickMe}>
+            <Text style={styles.buttonText}>Sign Up</Text>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.button} onPress={this.clickMe}>
+            <Text style={styles.buttonText}>Log in</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
@@ -41,6 +40,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  button: {
+    backgroundColor: '#6495ed',
+    borderRadius: 10,
+    padding: 5,
+    margin: 5
+  },
+  buttonText: {
+    fontSize: 20,
+    color: 'white',
+  },
+  buttonBox: {
+    flexDirection: 'row'
   },
   instructions: {
     textAlign: 'center',
