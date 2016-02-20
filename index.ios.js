@@ -2,7 +2,7 @@
 import React, { AppRegistry, Component, StyleSheet, Text, View, Image, TouchableHighlight, NavigatorIOS } from 'react-native';
 import Main from './app/views/main';
 
-class iPoop extends React.Component {
+class iPoop extends Component {
   renderScene(route, navigator) {
     const Component = route.component;
     return (
@@ -16,18 +16,7 @@ class iPoop extends React.Component {
   }
 
   render() {
-    return (
-      <View>
-        <NavigatorIOS
-          ref={(navigator) => {this.navigator = navigator; }}
-          renderScene = {this.renderScene}
-          initialRoute = {{
-            component: Main,
-            title: 'Main Page'
-          }} />
-          <Main />
-      </View>
-      )
+    return <Main/>
   }
 }
 
