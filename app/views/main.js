@@ -8,7 +8,7 @@ class Main extends Component {
   render() {
     return (
       <View style={styles.container} onPress={this.clickMe.bind(this)}>
-        {/*<Image source={require('./poop.png')} />*/}
+        <Image source={require('./poop.png')} />
         <Text onClick={this.clickMe.bind(this)} class="welcome" style={styles.welcome}>
           Welcome to iPoop!
         </Text>
@@ -23,6 +23,7 @@ class Main extends Component {
       </View>
     );
   }
+
 }
 
 const styles = StyleSheet.create({
