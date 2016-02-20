@@ -1,6 +1,24 @@
 'use strict';
 import React, { AppRegistry, Component, StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
 
+
+class iPoop extends Component {
+  render() {
+    return
+        <Navigator
+          initialRoute = {{name: 'Main', index: 0}}
+          renderScene = {{route, navigator}} =>
+            <Main
+              name = {route.name}
+              onForward = { () => {
+                var nextIndex = route.index + 1;
+                navigator.push({
+                  name: 'Scene ' + nextIndex,
+                  index: nextIndex
+                });
+              }}
+  }
+}
 // class iPoop extends Component {
 //   clickMe() {
 //     alert('Sasha and Yan are awesome!');
