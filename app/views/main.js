@@ -1,14 +1,14 @@
 'use strict';
-import React, { AppRegistry, Component, StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
+import React, { Component, StyleSheet, Text, View, Image, TouchableHighlight, NavigatorIOS } from 'react-native';
 
-class iPoop extends Component {
+class Main extends Component {
   clickMe() {
     alert('Sasha and Yan are awesome!');
   }
   render() {
     return (
       <View style={styles.container} onPress={this.clickMe.bind(this)}>
-        <Image source={require('./poop.png')} />
+        {/*<Image source={require('./poop.png')} />*/}
         <Text onClick={this.clickMe.bind(this)} class="welcome" style={styles.welcome}>
           Welcome to iPoop!
         </Text>
@@ -56,3 +56,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+module.exports = Main;
